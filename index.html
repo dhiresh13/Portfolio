@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF=8">
+    <title>Personal Portfolio Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
+<style type="text/css">
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+*:focus{
+    outline: none;
+}
+
+body{
+padding: 0;
+margin: 0;
+background: #000;
+color: white;
+font-family: "oxygen" , sans-serif;
+
+}
+a{
+ text-decoration: none;
+}
+img{
+    width: 100%;
+}
+.home img
+{
+width: 100%;
+-webkit-filter: grayscale(80%)
+contrast(100%);
+filter: grayscale(100%) contrast(200%)
+brightness(60%);
+}
+
+.projects img{
+
+filter: grayscale(100%) contrast(200%)
+brightness(60%);
+ }
+
+aside{
+position: fixed;
+background: #222;
+top:0px;
+left:0px;
+width: 120px;
+height: 100%;
+overflow: none;
+z-index: 1;
+text-align: center;
+padding: 0;
+}
+
+aside img{
+filter: grayscale(100%) contrast(80%)
+brightness(80%);
+margin-bottom: -3px;
+}
+
+.material-icons.md-36{
+font-size: 36px;
+
+}
+
+aside a{
+ display: block;
+ padding: 15px 0;
+ color: white;
+ transition: all 0.35s;
+ text-transform: uppercase;
+ font-size: 0.75em;
+ letter-spacing: 2px;
+ 
+}
+ 
+aside p{
+    margin: 0;
+    padding: 0;
+}
+
+aside a:hover{
+background: rgb(0, 0, 0);
+
+
+}
+
+aside nav a:nth-child(2){
+background: #000;
+}
+
+aside nav a:nth-child(2):hover{
+    background: #b2b2b2;
+    color: #222;
+
+}
+
+main{
+    max-width: 980px;
+    background: #000;
+    margin-left: 10%;
+    padding: 12px 50px 12px 50px;
+
+}
+header{
+text-align: center;
+letter-spacing: 2px;
+}
+
+header h1{
+font-weight: bold;
+font-size: 4em;
+letter-spacing: 4px;
+
+}
+
+header h5{
+
+font-weight: 300;
+font-size: 1em;
+letter-spacing: 4px;
+color: #b2b2b2;
+}
+
+.about,
+.projects,
+.contact{
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.about h2,
+.projects h2,
+.contact h2{
+    font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: line-through;
+    padding-bottom: 10px;
+    margin: 100px 0 0 0;
+    letter-spacing: 4px;
+}
+ 
+.about p{
+    color:#b2b2b2;
+}
+.about span{
+    font-weight: 600;
+    color: white;
+}
+.about h3{
+    font-weight: 300;
+    margin: 50px 0;
+}
+.container{
+    width: 100%;
+    background-color: #b2b2b2;
+
+}
+
+.skills{
+    text-align: right;
+    padding-right: 20px;
+    line-height: 30px;
+    color:white;
+    background-color: #424242;
+}
+
+.html{
+    width: 90%;
+}
+.css{
+width: 85%;
+}
+
+.Java{
+    width: 65%;
+}
+.js{
+    width: 95%;
+}
+.bs{
+    width: 55%;
+}
+.ps{
+    width: 75%;
+}
+.projects h3{
+    color: white;
+    font-weight: 300;
+    letter-spacing: 2px;    
+}
+.projects p{
+font-size: 0.875em;
+}
+
+.row-halves{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    -webkit-flex-pack:justify;
+
+}
+.row-halves.col{
+    width:49%;
+}
+.col{
+    border: 1px solid #222;
+    background: #222;
+    color:#b2b2b2;
+    padding: 10px;
+}
+label{
+    color: #b2b2b2;
+
+}
+form input[type="text"],
+select,
+textarea{
+    width:100px;
+    padding: 12px;
+    border: none;
+    border:1px solid #222;
+    background: transparent;
+    margin-top:6px;
+    margin-bottom:16px;
+    resize: vertical;
+    color:#b2b2b2;
+}
+form input[type="text"]:focus,
+textarea:focus{
+    outline: none;
+    border: 1px solid #009688;
+}
+
+input[type="submit"]{
+    background-color: transparent;
+    color:#b2b2b2;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    border: 1px solid #222;
+    cursor: pointer;
+    transition: all 0.35s;
+}
+
+input[type="submit"]{
+    background-color: transparent;
+    color:#b2b2b2;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    border: 1px solid #222;
+    cursor: pointer;
+    transition: all 0.35s;
+}
+
+input[type="submit"]:hover{
+    background-color: #b2b2b2;
+    color:#222;
+   
+}
+
+.contact.container{
+margin-top: 20px;
+margin-bottom: 100px;
+background: transparent;
+padding: 20px 0;
+}
+
+.footer{
+    border-top:1px solid #222;
+}
+.top-bar {
+padding: 20px 0;
+text-align: center;
+}
+
+.top-bar a{
+margin:10px;
+font-size: 2em;
+color:#b2b2b2;
+transition: all 0.35s;
+display: inline-block;
+}
+
+.top-bar a:hover{
+transform: scale(1.1);
+color: #009688;
+}
+.bottom-bar{
+    background: #000;
+    font-size: 0.75em;
+    text-align: center;
+}
+
+@media(max-width:768px){
+    .row-halves{
+        display: block;
+    }
+    .row-halves.col{
+        width:100%;
+        margin: 0 0 10px 0;
+    }
+}
+
+@media(max-width:601px){
+    aside{
+        display: none;
+    }
+    main{
+        width:100%;
+        margin: 0 auto;
+        padding: 12px 25px;
+
+    }
+}
+header{
+    margin-top:80px;
+}
+header h1{
+    font-size:3em;
+    line-height: 1.4em;
+}
+header h5{
+    font-size: 1em;
+   letter-spacing: 2px;
+}
+.mobile-nav{
+position: fixed;
+width: 100%;    
+display: flex;
+justify-content: space-around;
+background: rgba(0,0,0,0.8);
+z-index: 1;
+}
+
+.mobile-nav a{
+    width: 100%;
+    color:#b2b2b2;
+    text-transform: uppercase;
+    font-size: 0.875em;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 10px 10px;
+    transition: all 0.35s;
+}
+
+.mobile-nav a:hover{
+    background: #b2b2b2;
+    color: #222;
+}
+
+@media(min-width:600px){
+.mobile-nav{
+    display: none
+}
+}
+
+</style>
+
+
+</head>
+<body>
+
+    <aside>
+        <nav>
+            <img src="pic.JPG" alt="" >
+            <a href="#home"><i class="material-icons  md-36">language</i>
+            <p>Home</p>
+            </a>
+            <a href="#about"><i class="material-icons  md-36">card_travel</i>
+            <p>About</p>
+            </a>
+            <a href="#projects"><i class="material-icons  md-36">favorite_border</i>
+            <p>Projects</p>
+            </a>
+            <a href="#contact"><i class="material-icons  md-36">face</i>
+            <p>Contact</p>
+            </a>
+        </nav>
+    </aside>
+<nav class="mobile-nav">
+
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+<main>
+<header class="home" id="home"><br><br>
+    <h1>I'm Dhiresh Gullapalli</h1>
+    <h5>|Full Stack Developer|</h5>
+    <img src="pic.JPG" alt="">
+</header>
+</main>
+<section class="about" id="about">
+<h2>About Me</h2>
+<p>
+    <span>Hello, I am  Dhiresh </span> I'm Developer, Manager, Life-Long Learner,
+     and ready for new Opportunities. A bit about me, i love Music,Quora and all
+     the things that include Creativity, Effort and Serenity.
+</p>
+<p>
+I Believe in User Centric design with Dynamic Projects and Delievering
+the best possible experience to people.I have experience with HTML,CSS,Bootstrap,Java
+JavaScript,Jquery,Json,Ajax,Git,Photoshop,AfterEffects,Asp.Net,C#.
+</p>
+<h3>My Skills</h3>
+<P>HTML</P>
+<div class="container">
+    <div class="skills html">70%</div>
+</div>
+<P>CSS</P>
+<div class="container">
+    <div class="skills css">60%</div>
+</div>
+<P>Java</P>
+<div class="container">
+    <div class="skills Java">75%</div>
+</div>
+<P>JavaScript</P>
+<div class="container">
+    <div class="skills js">60%</div>
+</div>
+<P>Bootstrap</P>
+<div class="container">
+    <div class="skills bs">50%</div>
+</div>
+<P>Photoshop</P>
+<div class="container">
+    <div class="skills ps">75%</div>
+</div>
+</section>
+<section class="projects" id="projects">
+    <h2>Projects</h2>
+<div class="row-halves">
+<div class="col">
+<img src="pic.JPG" alt="">
+<h3>Developement</h3>
+<p>
+    Building Responsive and thoughtful sites and 
+    Applications.
+</p>
+</div>
+<div class="col">
+        <img src="pic.JPG" alt="">
+        <h3>Management</h3>
+        <p>
+            Managing teams and projects and following 
+            Roles and Responsibilities of a Manager.
+        </p>
+        </div>
+</div>
+
+<div class="row-halves">
+        <div class="col">
+        <img src="pic.JPG" alt="">
+        <h3>Academics</h3>
+        <p>
+            Graduation in BCS and Currently Pursuing
+            MCA from MITWPU,Pune with Right Academic Knowledge and Skills.
+        </p>
+        </div>  
+</div>
+</section>
+
+<section class="contact" id="contact">
+<h2>Contact</h2>
+<div class="container">
+<form action="">
+    <label for="name">Name</label>
+<input type="text" id="name" name="name">
+<label for="email">E-mail</label>
+<input type="text" id="email" name="email">
+<label for="message">Message</label>
+<textarea name="message" style="height:200px"></textarea>
+<input type="submit" value="message">
+
+</form>
+</div>
+
+</section>
+<footer>
+<section class="top-bar">
+<a href=""><i class="fab fa-facebook-f"></i></a>
+<a href=""><i class="fab fa-linkedn"></i></a>
+<a href=""><i class="fab fa-github"></i></a>
+<a href=""><i class="fab fa-instagram"></i></a>
+<a href=""><i class="fab fa-wakatime"></i></a>
+
+</section>
+
+<section class="bottom-bar">
+<p>&copy 2019 |All rights reserved</p>
+
+
+</section>
+
+</footer>
+
+</body>
+</html>
